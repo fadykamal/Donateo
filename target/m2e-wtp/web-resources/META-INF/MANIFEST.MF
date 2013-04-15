@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Built-By: pc
-Build-Jdk: 1.7.0_17
+Built-By: home
+Build-Jdk: 1.7.0_12-ea
 Created-By: Maven Integration for Eclipse
 

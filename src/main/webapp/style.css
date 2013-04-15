@@ -1,0 +1,122 @@
+* {
+ margin: 0;
+ padding: 0; 
+}
+
+body {
+	font-size: 62.5%;
+	font-family: Arial, Tahoma, sans-serif;
+	background: #fff;
+}
+
+label {
+	display: inline;
+	line-height: 1;
+}
+
+#wrap {
+	display: block;
+	width: 800px;
+	margin: 0 auto;
+	background: #fff;
+	padding-top: 30px;
+	margin-top: 15px;
+}
+
+/** the contact form **/
+#contact-form { 
+	display: block;
+}
+
+#contact-form .rowbox {
+	display: block;
+	width: 100%;
+	position: relative;
+	padding: 15px 5px;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+}
+
+#contact-form .rowbox.colors {
+	background: #e6e3ba;
+	border-top-color: #b9b576;
+	border-bottom-color: #b9b576;
+}
+
+#contact-form .rowbox.txtarea {
+	margin-bottom: 15px;
+}
+
+#contact-form .rowbox label {
+	display: inline;
+	position: absolute;
+	top: 25px;
+	left: 10px;
+	font-family: Arial, Tahoma, sans-serif;
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #666;
+}
+#contact-form .rowbox label small {
+	vertical-align: super;
+	font-size: 0.65em;
+}
+#contact-form .rowbox.txtarea label {
+	top: 22px;
+}
+
+#contact-form .infobox {
+	position: absolute;
+	top: 20px;
+	left: 390px;
+	color: #787878;
+	padding-left: 20px;
+	font-size: 1.1em;
+	background: url('images/info.png') 0px 0px no-repeat;
+	height: 20px;
+	line-height: 17px;
+	display: block;
+	opacity: 0;
+}
+
+#contact-form .infobox.good {
+	background: url('images/tick.png') 0px 0px no-repeat !important;
+}
+
+#contact-form .txtbar {
+	display: block;
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 1.5em;
+	padding: 6px 8px;
+	border: 1px solid #ccc;
+	color: #888;
+	width: 320px;
+}
+#contact-form .txtbox {
+	display: block;
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 1.5em;
+	padding: 5px 8px;
+	border: 1px solid #ccc;
+	color: #888;
+	width: 350px;
+	height: 130px;
+}
+
+#contact-form #sendbtn {
+	display: block;
+	padding: 11px 15px;
+	border: 1px solid #cdcdcd;
+	color: #888;
+	font-weight: bold;
+	background: #dfdfdf;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+#contact-form #sendbtn:hover {
+	cursor: pointer;
+	background: #efefef;
+	color: #989898;
+}
