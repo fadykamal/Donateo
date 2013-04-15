@@ -13,8 +13,9 @@ Registration Form
 <link href="Register.css" rel="stylesheet">
 <link href="form.css" rel="stylesheet">
 
-<script src="wufoo.js"></script>
+
   <script src="jquery.js"></script>
+   <script src="layout.js"></script>
 
 <script type="text/javascript" src="jquery.validate.js"></script>
 
@@ -26,9 +27,9 @@ Registration Form
  
   <script> 
   $(document).ready(function(){
-  $("#RegistrationForm").validate();
+  $("#Register").validate();
   
-  if (RegistrationForm.Cpassword.value != RegistrationForm.password.value){
+  if (Register.Cpassword.value != Register.password.value){
 	  alert("Confirm password doesn't match");
 	  return false;
   }
@@ -38,7 +39,7 @@ Registration Form
   
   function validatePass(password, Cpassword) {
 	    if (password.value != Cpassword.value || password.value == '' || Cpassword.value == '') {
-	    	Cpassword.setCustomValidity('Password incorrect');
+	    	Cpassword.setCustomValidity('password incorrect');
 	    } else {
 	    	Cpassword.setCustomValidity('');
 	    }
@@ -57,19 +58,19 @@ Registration Form
 
   /*function valide()
   {
-  var Username=document.forms["RegistrationForm"]["Username"].value;
-  var Lname=document.forms["RegistrationForm"]["Lname"].value;
-  var password=document.forms["RegistrationForm"]["password"].value;
-  var Cpassword=document.forms["RegistrationForm"]["Cpassword"].value;
-  var Address=document.forms["RegistrationForm"]["Address"].value;
-  var City=document.forms["RegistrationForm"]["City"].value;
-  var Country=document.forms["RegistrationForm"]["Country"].value;
-  var email=document.forms["RegistrationForm"]["Email"].value;
+  var name=document.forms["Register"]["name"].value;
+  var Lname=document.forms["Register"]["Lname"].value;
+  var password=document.forms["Register"]["password"].value;
+  var Cpassword=document.forms["Register"]["Cpassword"].value;
+  var address=document.forms["Register"]["address"].value;
+  var City=document.forms["Register"]["City"].value;
+  var Country=document.forms["Register"]["Country"].value;
+  var email=document.forms["Register"]["email"].value;
   var atpos=email.indexOf("@");
   var dotpos=email.lastIndexOf(".");
-  var Phone=document.forms["RegistrationForm"]["Phone"].value;
-  var PhoneI=document.forms["RegistrationForm"]["PhoneI"].value;
-  var PhoneII=document.forms["RegistrationForm"]["PhoneII"].value;
+  var phone=document.forms["Register"]["phone"].value;
+  var phoneI=document.forms["Register"]["phoneI"].value;
+  var phoneII=document.forms["Register"]["phoneII"].value;
   
   
   
@@ -77,7 +78,7 @@ Registration Form
 //Let me warn you:
 //There are many many people with names less than 7 characters
 
-if (Username==null || Username=="" || Username.length<7) {
+if (name==null || name=="" || name.length<7) {
  alert("Please provide Your full name");
  return false;
 } // if returned so else is not required
@@ -88,7 +89,7 @@ if (password == null || password==""){
   // length = 0 or password is null here so:  
   // if(password.length<8)  is unnecessary 
   if(password == ""){  
-         alert("Password must contain at least 8 charecters");
+         alert("password must contain at least 8 charecters");
   } else
          alert("Please insert your password");
   return false;
@@ -100,7 +101,7 @@ if (Cpassword != Cassword){
 }  // if returned so else is not required
 
 if (email==null || email==""){
-  alert("Email must be filled out.");
+  alert("email must be filled out.");
   return false;
 } // if returned so else is not required
 
@@ -131,7 +132,7 @@ return(true);
 <a ></a>
 </h1>
 
-<form class="RegistrationForm" id="RegistrationForm" method="Post" action="Register" name ="Register" onsubmit="return validate(this);" >
+<form class="Register" id="Register" method="Post" action="Register" name ="Register" onsubmit="return validate(this);" >
 
 
 <header id="header" class="info">
@@ -146,8 +147,8 @@ return(true);
 Name
 </label>
 <span>
-<input id="Username" name="Username" type="text"  size="8" tabindex="1" class="required && field text ln" minlength="2"/>
-<label for="Username">First</label>
+<input id="name" name="name" type="text"  size="8" tabindex="1" class="required && field text ln" minlength="2"/>
+<label for="name">Username</label>
 </span>
 
 </li>
@@ -171,24 +172,10 @@ Password
 Address
 </label>
 <span>
-<input id="Address" name="Address" type="text" class="required && field text ln"  minlength="4" size="14" tabindex="2" />
-<label for="Address">Address</label>
-</span>
-<span>
-<input id="City" name="City" type="text" class="required && field text ln"  minlength="4" minlength="2" size="14" tabindex="2" />
-<label for="City">City</label>
+<input id="address" name="address" type="text" class="required && field text ln"  minlength="4" size="14" tabindex="2" />
+<label for="address">Address</label>
 </span>
 
-<span class="country">
-<select id="Country" name="Country" class="field select addr" tabindex="8" >
-<option value="" selected="selected"></option>
-
-<option value="Egypt" >Egypt</option>
-
-
-</select>
-<label for="">Country</label>
-</span>
 </li>
 
 
@@ -196,30 +183,30 @@ Address
 
 
 <li id="foli9" class="notranslate      ">
-<label class="desc" id="title9" for="Email">
+<label class="desc" id="title9" for="email">
 Email
 </label>
 <div>
-<input id="Email" name="Email" type="email"  class="required email && field text ln" spellcheck="false" class="field text medium" value="" maxlength="255" tabindex="9" /> 
+<input id="email" name="email" type="email"  class="required email && field text ln" spellcheck="false" class="field text medium" value="" maxlength="255" tabindex="9" /> 
 </div>
 </li>
 <li id="foli10" class="phone notranslate      ">
-<label class="desc" id="title10" for="Phone">
+<label class="desc" id="title10" for="phone">
 Mobile Number
 </label>
 <span>
-<input id="Phone" name="Phone" type="tel" class="required number && field text ln"" minlength="4" size="4"  maxlength="4"  tabindex="10" />
-<label for="Phone">####</label>
+<input id="phone" name="phone" type="tel" class="required number && field text ln"" minlength="4" size="4"  maxlength="4"  tabindex="10" />
+<label for="phone">####</label>
 </span>
 <span class="symbol">-</span>
 <span>
-<input id="PhoneI" name="PhoneI" type="tel" class="required number && field text ln"" minlength="3" size="3" maxlength="3" tabindex="11" />
-<label for="PhoneI">###</label>
+<input id="phoneI" name="phoneI" type="tel" class="required number && field text ln"" minlength="3" size="3" maxlength="3" tabindex="11" />
+<label for="phoneI">###</label>
 </span>
 <span class="symbol">-</span>
 <span>
- <input id="PhoneII" name="PhoneII" type="tel" class="required number && field text ln"" minlength="3" size="4" maxlength="4" tabindex="12" />
-<label for="PhoneII">####</label>
+ <input id="phoneII" name="phoneII" type="tel" class="required number && field text ln"" minlength="3" size="4" maxlength="4" tabindex="12" />
+<label for="phoneII">####</label>
 </span>
 </li>
 <li id="foli11" class="notranslate  threeColumns     ">

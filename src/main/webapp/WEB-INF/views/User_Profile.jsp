@@ -19,9 +19,7 @@
 
     java.util.Date date = new java.util.Date();
   java.util.Hashtable<String, Integer> All = new  java.util.Hashtable<String, Integer>();
-  All.put("ok", 0);
-  All.put("mai", 1);
-  All.put("samar", 2);
+
   java.util.Enumeration keys =All.keys();
   
   Object result = "";
@@ -170,7 +168,7 @@ margin-top:-350px;
 </p>
   </div>
   <div id="tabs-3">
-<p> ${hashtable}</p>
+<p> </p>
   </div>
 </div>
 

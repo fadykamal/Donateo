@@ -1,4 +1,4 @@
-package net.codejava.test;
+package net.codejava.springmvc;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -24,7 +24,46 @@ public class HomeController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-
+	@RequestMapping(value = "/test", method = RequestMethod.GET)
+	public String test(Model model) {
+	    String greetings = "Greetings, Spring MVC!";
+	    model.addAttribute("message", greetings);
+	 
+	    return "test";
+	}
+	
+	@RequestMapping(value = "/volunteer", method = RequestMethod.GET)
+	public String volunteer(Model model) {
+	    String greetings = "Greetings, Spring MVC!";
+	    model.addAttribute("message", greetings);
+	 
+	    return "volunteer";
+	}
+	
+	@RequestMapping(value = "/form", method = RequestMethod.GET)
+	public String form(Model model) {
+	    String greetings = "Greetings, Spring MVC!";
+	    model.addAttribute("message", greetings);
+	 
+	    return "form";
+	}
+	
+	@RequestMapping(value = "/validate", method = RequestMethod.GET)
+	public String validate(Model model) {
+	    String greetings = "Greetings, Spring MVC!";
+	    model.addAttribute("message", greetings);
+	 
+	    return "validate";
+	}
+	
+	
+	@RequestMapping(value = "/testII", method = RequestMethod.GET)
+	public String testII(Model model) {
+	    String greetings = "Mai Zuhair Elkomy";
+	    model.addAttribute("message", greetings);
+	 
+	    return "testII";
+	}
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String Home(Locale locale ,Model model) {
@@ -43,7 +82,13 @@ public class HomeController {
 	public String User_Profile(Locale locale ,Model model) {
 		logger.info("",locale);
 		String greetings = "Mai Zuhair Elkomy ";
-        model.addAttribute("message", greetings);
+		   Hashtable<String, Integer> All = new Hashtable<String, Integer>();
+		
+		   
+	    model.addAttribute("message", greetings);
+	    model.addAttribute("hashtable", All);
+	    
+	 
 	    return "User_Profile";
 	}
 	
@@ -67,6 +112,14 @@ public class HomeController {
 	    return "Register";
 	}
 	
-	
+	@RequestMapping(value = "/layout", method = RequestMethod.GET)
+	public String layout(Locale locale ,Model model) {
+		logger.info("",locale);
+		String greetings = "Register  ";
+	    model.addAttribute("message", greetings);
+	    
+	 
+	    return "layout";
+	}
 	
 }
