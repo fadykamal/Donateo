@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.sql.Types;
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.Locale;
 
@@ -41,18 +42,102 @@ public class HomeController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
+	@RequestMapping(value = "/test", method = RequestMethod.GET)
+	public String test(Model model) {
+	    String greetings = "Greetings, Spring MVC!";
+	    model.addAttribute("message", greetings);
+	 
+	    return "test";
+	}
+	
+	@RequestMapping(value = "/volunteer", method = RequestMethod.GET)
+	public String volunteer(Model model) {
+	    String greetings = "Greetings, Spring MVC!";
+	    model.addAttribute("message", greetings);
+	 
+	    return "volunteer";
+	}
+	
+	@RequestMapping(value = "/form", method = RequestMethod.GET)
+	public String form(Model model) {
+	    String greetings = "Greetings, Spring MVC!";
+	    model.addAttribute("message", greetings);
+	 
+	    return "form";
+	}
+	
+	@RequestMapping(value = "/validate", method = RequestMethod.GET)
+	public String validate(Model model) {
+	    String greetings = "Greetings, Spring MVC!";
+	    model.addAttribute("message", greetings);
+	 
+	    return "validate";
+	}
+	
+	
+	@RequestMapping(value = "/testII", method = RequestMethod.GET)
+	public String testII(Model model) {
+	    String greetings = "Mai Zuhair Elkomy";
+	    model.addAttribute("message", greetings);
+	 
+	    return "testII";
+	}
+	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
+	public String Home(Locale locale ,Model model) {
+		logger.info("Wlcome home habebe",locale);
 		
 		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		DateFormat d = DateFormat.getDateTimeInstance(DateFormat.LONG,DateFormat.LONG,locale);
+		String formatteddate = d.format(date);
+	   // String greetings = "Greetings, Spring MVC!";
+	    model.addAttribute("serverTime", formatteddate);
+	 
+	    return "home";
+	}
+	
+	@RequestMapping(value = "/User_Profile", method = RequestMethod.GET)
+	public String User_Profile(Locale locale ,Model model) {
+		logger.info("",locale);
+		String greetings = "Mai Zuhair Elkomy ";
+		   Hashtable<String, Integer> All = new Hashtable<String, Integer>();
 		
-		String formattedDate = dateFormat.format(date);
-		
-		model.addAttribute("serverTime", formattedDate );
-		
-		return "home";
+		   
+	    model.addAttribute("message", greetings);
+	    model.addAttribute("hashtable", All);
+	    
+	 
+	    return "User_Profile";
+	}
+	
+	@RequestMapping(value = "/log_in", method = RequestMethod.GET)
+	public String Login(Locale locale ,Model model) {
+		logger.info("",locale);
+		String greetings = "logging in  ";
+	    model.addAttribute("message", greetings);
+	    
+	 
+	    return "Login";
+	}
+	
+	@RequestMapping(value = "/Register", method = RequestMethod.GET)
+	public String Register(Locale locale ,Model model) {
+		logger.info("",locale);
+		String greetings = "Register  ";
+	    model.addAttribute("message", greetings);
+	    
+	 
+	    return "Register";
+	}
+	
+	@RequestMapping(value = "/layout", method = RequestMethod.GET)
+	public String layout(Locale locale ,Model model) {
+		logger.info("",locale);
+		String greetings = "Register  ";
+	    model.addAttribute("message", greetings);
+	    
+	 
+	    return "layout";
 	}
 	
 	@RequestMapping(value = "/Register", method = RequestMethod.POST)
