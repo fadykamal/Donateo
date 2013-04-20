@@ -31,10 +31,7 @@
 		<servlet-name>spring-servlet</servlet-name>
 		<servlet-class>com.springframework.web.servlet.DispatcherServlet</servlet-class>
 	</servlet>
-	<servlet-mapping>
-		<servlet-name>spring-servlet</servlet-name>
-		<url-pattern></url-pattern>
-	</servlet-mapping>
+
 
 
 
